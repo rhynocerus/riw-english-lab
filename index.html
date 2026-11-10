@@ -78,7 +78,182 @@
   footer{margin:10px 0;font-size:.7rem}
 }
 
-</style></head><body><main><header><div class="brand"><img src="https://rhynus-interactive-works.rhynus.chatgpt.site/riw-common/logo.png" alt="Logotipo oficial de Rhynus Interactive Works"><strong>ENGLISH LAB</strong></div></header><h1>Don't take it <span>literally!</span> 🗣️</h1><p>Seis expresiones. Seis situaciones reales. Aprende lo que los ingleses <em>quieren decir</em>, no solo lo que dicen.</p><section class="panel" aria-live="polite"><div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div><div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div><div class="quiz-context"><p class="muted">¿Qué significa esta expresión en la situación indicada?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar expresión</button><button id="exampleAudio" type="button">🔊 Escuchar ejemplo</button></div><p id="voiceStatus" class="muted">La voz depende de las voces instaladas en tu navegador.</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div></section>
+</style>
+<style>
+#riw-english-lab-identity-v2 {
+  max-width: 480px;
+  margin: 20px auto;
+}
+#riw-english-lab-identity-v2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+@media (max-width: 600px) {
+  #riw-english-lab-identity-v2 {
+    max-width: 320px;
+  }
+}
+</style>
+
+<style data-riw-domino="v0.5">
+/* RIW English Lab · Domino Style v0.5 */
+#riw-english-lab-identity-v2 {
+  width: min(100%, 230px);
+  margin: 4px auto 12px;
+  transition: width .25s ease;
+}
+#riw-english-lab-identity-v2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+body.riw-intro-active {
+  overflow: hidden;
+}
+#riw-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: radial-gradient(
+    circle at 50% 25%, #244b61, #0c1825 75%
+  );
+}
+#riw-intro[hidden] {
+  display: none !important;
+}
+.riw-intro-card {
+  width: min(100%, 430px);
+  text-align: center;
+  padding: clamp(18px, 5vw, 30px);
+  border: 1px solid #426b7c;
+  border-radius: 24px;
+  background: #142a3b;
+  box-shadow: 0 18px 60px #0007;
+}
+.riw-intro-card img {
+  display: block;
+  width: min(100%, 330px);
+  height: auto;
+  margin: auto;
+  border-radius: 14px;
+}
+.riw-intro-card h2 {
+  margin: 14px 0 8px;
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
+}
+.riw-intro-card p {
+  margin: 8px 0 18px;
+}
+#riw-intro-start {
+  width: 100%;
+  min-height: 48px;
+  text-align: center;
+  background: #f4b84b;
+  color: #10202d;
+  border-color: #f4b84b;
+  font-weight: 800;
+}
+#riw-intro-start:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+@media(max-width:600px) {
+  main {
+    width: 100%;
+    padding: 10px 12px 22px;
+  }
+  #riw-english-lab-identity-v2 {
+    width: min(100%, 145px);
+    margin: 2px auto 8px;
+  }
+  h1 {
+    font-size: clamp(1.45rem, 6vw, 1.9rem);
+    margin: 10px 0 6px;
+  }
+  h1 + p {
+    margin: 6px 0;
+    font-size: .88rem;
+    line-height: 1.4;
+  }
+  .panel {
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .options button {
+    min-height: 48px;
+    overflow-wrap: anywhere;
+  }
+  .toolbar button {
+    min-height: 44px;
+  }
+  .expression {
+    overflow-wrap: anywhere;
+  }
+  nav[data-riw-navigation] {
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+}
+@media(max-height:500px) and (orientation:landscape) {
+  #riw-english-lab-identity-v2 {
+    width: 110px;
+    margin: 0 auto 4px;
+  }
+  .riw-intro-card {
+    padding: 12px;
+  }
+  .riw-intro-card img {
+    width: min(35vh, 160px);
+  }
+  .riw-intro-card h2 {
+    margin: 6px 0;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #riw-english-lab-identity-v2 {
+    transition: none;
+  }
+}
+</style>
+</head><body><main>
+
+<div id="riw-intro" hidden
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="riw-intro-title">
+  <div class="riw-intro-card">
+    <img
+      src="assets/brand/logo/web/english-lab-horizontal-movil.webp"
+      alt="RIW English Lab"
+      width="480"
+      height="240">
+    <h2 id="riw-intro-title">Welcome to English Lab!</h2>
+    <p>Escucha, descubre y aprende jugando.</p>
+    <button id="riw-intro-start" type="button">
+      ¡A jugar! 🚀
+    </button>
+  </div>
+</div>
+
+<div id="riw-english-lab-identity-v2">
+  <picture>
+    <source media="(max-width: 600px)"
+      srcset="assets/brand/logo/web/english-lab-horizontal-movil.webp">
+    <img
+      src="assets/brand/logo/web/english-lab-horizontal.webp"
+      alt="RIW English Lab"
+      width="960"
+      height="480"
+      decoding="async">
+  </picture>
+</div>
+<h1>Don't take it <span>literally!</span> 🗣️</h1><p>Seis expresiones. Seis situaciones reales. Aprende lo que los ingleses <em>quieren decir</em>, no solo lo que dicen.</p><section class="panel" aria-live="polite"><div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div><div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div><div class="quiz-context"><p class="muted">¿Qué significa esta expresión en la situación indicada?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar expresión</button><button id="exampleAudio" type="button">🔊 Escuchar ejemplo</button></div><p id="voiceStatus" class="muted" style="font-size:.78rem;line-height:1.45;padding:9px 11px;border-left:3px solid #f4b84b;background:#203342;border-radius:7px">🔊 <strong>Consejo de pronunciación:</strong> Para escuchar voces inglesas más naturales, prueba Chrome en Android con una voz inglesa instalada. En Firefox y otros navegadores, la calidad puede variar según las voces disponibles. Si suena robótico, ¡no es tu inglés! 😄</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div></section>
 <nav data-riw-navigation="v1" aria-label="Navegación English Lab"
 style="display:flex;flex-wrap:wrap;justify-content:center;
 gap:12px;margin:24px 0;padding:18px;
@@ -96,4 +271,50 @@ const lessons=[
 {idiom:'Spill the beans',situation:'Your friend accidentally reveals a surprise party.',example:'Please do not spill the beans!',options:['Contar un secreto','Cocinar para todos','Llegar demasiado tarde'],correct:0,explain:'Spill the beans significa revelar un secreto, a veces sin querer.'},
 {idiom:'Once in a blue moon',situation:'Someone visits a distant city very rarely.',example:'I visit that city once in a blue moon.',options:['Cada noche','Una vez al mes','Muy de vez en cuando'],correct:2,explain:'Once in a blue moon significa muy raramente.'}
 ];let index=0,score=0,answered=false;const $=id=>document.getElementById(id);function speak(t){if(!('speechSynthesis' in window)){ $('voiceStatus').textContent='Este navegador no ofrece síntesis de voz.';return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.82;let voices=speechSynthesis.getVoices();let en=voices.find(v=>v.lang.toLowerCase().startsWith('en-gb'))||voices.find(v=>v.lang.toLowerCase().startsWith('en'));if(en)u.voice=en;$('voiceStatus').textContent=en?'Voz: '+en.name:'Usando la voz inglesa predeterminada, si está disponible.';speechSynthesis.speak(u)}function render(){answered=false;let q=lessons[index];$('counter').textContent=`Desafío ${index+1} / ${lessons.length}`;$('score').textContent=`⭐ ${score} puntos`;$('bar').style.width=((index+1)/lessons.length*100)+'%';$('idiom').textContent=q.idiom;$('situation').textContent=q.situation;$('feedback').classList.add('hidden');$('next').classList.add('hidden');$('options').replaceChildren();q.options.forEach((opt,i)=>{let b=document.createElement('button');b.textContent=String.fromCharCode(65+i)+'. '+opt;b.onclick=()=>choose(i);$('options').append(b)});$('listen').onclick=()=>speak(q.idiom);$('exampleAudio').onclick=()=>speak(q.example)}function choose(i){if(answered)return;answered=true;let q=lessons[index];if(i===q.correct)score+=100;[...$('options').children].forEach((b,n)=>{b.disabled=true;if(n===q.correct)b.classList.add('correct');else if(n===i)b.classList.add('wrong')});$('score').textContent=`⭐ ${score} puntos`;$('feedback').textContent=(i===q.correct?'✅ ¡Correcto! ':'💡 Buena tentativa. ')+q.explain+' Ejemplo: '+q.example;$('feedback').classList.remove('hidden');$('next').textContent=index===lessons.length-1?'Ver resultado →':'Siguiente desafío →';$('next').classList.remove('hidden')}function finish(){if("speechSynthesis" in window) speechSynthesis.cancel();$('counter').textContent='Actividad terminada';$('bar').style.width='100%';$('idiom').textContent=`🎉 ${score} / ${lessons.length*100} puntos`;$('situation').textContent='¡Buen trabajo! Los idioms se aprenden practicando en situaciones reales.';$('options').replaceChildren();$('listen').classList.add('hidden');$('exampleAudio').classList.add('hidden');$('voiceStatus').classList.add('hidden');$('feedback').classList.add('hidden');$('next').textContent='↻ Repetir la actividad';$('next').classList.remove('hidden');$('next').onclick=()=>{index=0;score=0;$('listen').classList.remove('hidden');$('exampleAudio').classList.remove('hidden');$('voiceStatus').classList.remove('hidden');$('next').onclick=advance;render()}}function advance(){if(index===lessons.length-1)finish();else{index++;render()}}$('next').onclick=advance;render();
-</script></body></html>
+</script>
+<script>
+(function () {
+  "use strict";
+
+  const intro = document.getElementById("riw-intro");
+  const start = document.getElementById("riw-intro-start");
+
+  if (!intro || !start) return;
+
+  let mostrar = true;
+
+  try {
+    mostrar = sessionStorage.getItem(
+      "riw-english-lab-intro-v05"
+    ) !== "vista";
+  } catch (_) {
+    mostrar = true;
+  }
+
+  if (!mostrar) return;
+
+  intro.hidden = false;
+  document.body.classList.add("riw-intro-active");
+
+  start.focus();
+
+  function comenzar() {
+    try {
+      sessionStorage.setItem(
+        "riw-english-lab-intro-v05", "vista"
+      );
+    } catch (_) {}
+
+    intro.hidden = true;
+    document.body.classList.remove("riw-intro-active");
+
+    const primerBoton = document.getElementById("listen");
+    if (primerBoton) {
+      primerBoton.focus({preventScroll:true});
+    }
+  }
+
+  start.addEventListener("click", comenzar);
+})();
+</script>
+</body></html>
