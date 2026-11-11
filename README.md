@@ -80,7 +80,7 @@ La experiencia se desarrolla para navegadores web mediante **HTML, CSS y JavaScr
 ### Licencias del proyecto
 
 [![Código GPLv3](https://img.shields.io/badge/Código-GPLv3-2b7b3c?logo=gnu&logoColor=white)](LICENSE)
-[![Contenidos CC BY-SA 4.0](https://img.shields.io/badge/Contenidos-CC_BY--SA_4.0-ef9421?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-sa/4.0/deed.es)
+[![Creative Commons Atribución-CompartirIgual 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/deed.es)
 ![Identidad RIW](https://img.shields.io/badge/Marca_RIW-Derechos_reservados-4c6075)
 
 - **Código fuente:** [GNU GPLv3](LICENSE), para el código original HTML, CSS y JavaScript.
