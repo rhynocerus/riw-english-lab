@@ -77,15 +77,18 @@ La experiencia se desarrolla para navegadores web mediante **HTML, CSS y JavaScr
 - **Recursos de terceros.** Respetar sus licencias y derechos originales. Su inclusión en el proyecto no cambia esos derechos.
 - **Colaboración.** Se agradecen propuestas y correcciones respetuosas con la finalidad educativa y la identidad RIW.
 
-### Licencia propuesta para contenidos educativos
+### Licencias del proyecto
 
-[![Creative Commons BY-SA 4.0 (propuesta)](https://img.shields.io/badge/Propuesta-CC_BY--SA_4.0-ef9421?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-sa/4.0/deed.es)
+[![Código GPLv3](https://img.shields.io/badge/Código-GPLv3-2b7b3c?logo=gnu&logoColor=white)](LICENSE)
+[![Contenidos CC BY-SA 4.0](https://img.shields.io/badge/Contenidos-CC_BY--SA_4.0-ef9421?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-sa/4.0/deed.es)
+![Identidad RIW](https://img.shields.io/badge/Marca_RIW-Derechos_reservados-4c6075)
 
-**Propuesta pendiente de aprobación específica:** aplicar [Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es) a los **textos y explicaciones educativos originales expresamente identificados**, excluyendo código, logotipos, marcas y materiales de terceros.
+- **Código fuente:** [GNU GPLv3](LICENSE), para el código original HTML, CSS y JavaScript.
+- **Textos didácticos originales:** [Creative Commons CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es), con atribución y obligación de compartir adaptaciones bajo la misma licencia.
+- **Logotipos e identidad RIW:** excluidos de las licencias abiertas; su utilización como marca requiere autorización.
+- **Recursos de terceros:** conservan sus derechos y condiciones originales.
 
-**Código fuente:** el repositorio no dispone actualmente de un archivo `LICENSE` en la raíz. Antes de asignar una licencia de software se deberá elegirla expresamente.
-
-> La insignia CC BY-SA indica una **propuesta**, no una licencia ya concedida a todos los archivos del repositorio.
+Consulta [LICENCIAS.md](LICENCIAS.md) para conocer el alcance de cada licencia y sus exclusiones.
 
 ## 🌱 Rhynus Interactive Works
 
