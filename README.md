@@ -36,7 +36,17 @@ El laboratorio reúne **11 ejercicios** en su catálogo, con navegación entre a
 
 ## 🖼️ Capturas reales
 
-Las dos capturas oficiales de la **pantalla de bienvenida** y del ejercicio **Break the ice** están preparadas en el paquete editorial para incorporarlas a `docs/capturas/`. Se mostrarán aquí una vez añadidos esos archivos al repositorio.
+<div align="center">
+
+**Pantalla de bienvenida**
+
+<img src="docs/capturas/bienvenida.webp" alt="Pantalla de bienvenida de RIW English Lab" width="680">
+
+**Don't take it literally! · Break the ice**
+
+<img src="docs/capturas/idioms.webp" alt="Ejercicio interactivo Break the ice con opciones de respuesta y controles de escucha" width="760">
+
+</div>
 
 ## 🚀 ¡Pruébalo y dinos qué te parece!
 
