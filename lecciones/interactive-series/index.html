@@ -80,6 +80,103 @@ footer {
   }
 }
 </style>
+
+<style id="riw-ux-final">
+/* Fotografías completas */
+.cards .tile {
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3;
+  background: #203b4b !important;
+  overflow: hidden;
+}
+.cards .tile .photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center;
+}
+.cards .tile .photo-caption {
+  background: linear-gradient(transparent,#102936dd);
+}
+
+/* Selector de voz compacto */
+#riw-voice-box {
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px !important;
+}
+#riw-voice-box label {
+  font-size: .82rem !important;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+#riw-voice-choice {
+  width: auto !important;
+  flex: 0 1 190px;
+  min-width: 0;
+  min-height: 38px !important;
+  padding: 5px 8px !important;
+  font-size: .85rem;
+}
+#riw-voice-hint {
+  display: none !important;
+}
+.panel .controls {
+  justify-content: flex-start;
+  gap: 8px !important;
+  margin: 5px 0 !important;
+}
+.panel .controls button {
+  flex: 1;
+  min-height: 44px !important;
+}
+#status {
+  margin: 4px 0 !important;
+  font-size: .75rem;
+}
+#answers.cards {
+  margin: 8px 0 !important;
+}
+footer {
+  text-align: center !important;
+  width: 100%;
+}
+
+@media(max-width:600px) {
+  #riw-voice-box {
+    display: grid !important;
+    grid-template-columns: auto minmax(0,1fr);
+    gap: 6px !important;
+  }
+  #riw-voice-box label {
+    font-size: .75rem !important;
+    white-space: normal;
+  }
+  #riw-voice-choice {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .cards .tile {
+    aspect-ratio: 1 / 1;
+    min-height: 0 !important;
+  }
+  .cards .tile .photo-caption {
+    font-size: .65rem;
+    padding: 4px;
+  }
+  #status:empty {
+    display: none;
+  }
+}
+</style>
 </head><body><main><header><img src="../../assets/brand/logo/web/english-lab-horizontal.webp" alt="Logotipo oficial RIW English Lab"><strong>RIW · ENGLISH LAB</strong></header><h1 id="heading"></h1><p id="intro"></p><section class="panel"><div class="top"><strong id="counter"></strong><strong id="score">⭐ 0 puntos</strong></div><div class="bar"><div id="bar"></div></div><div id="stage"></div><div class="controls"><button id="hear" type="button">🔊 Escuchar</button><button id="slow" type="button">🐢 Más despacio</button></div><p id="status" class="muted" role="status"></p><div id="answers"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button">Siguiente →</button></section><nav class="nav" aria-label="Navegación del laboratorio"><a href="../index.html">⌂ Ir a la Colección</a><a id="prev" href="#">← Anterior</a><a id="following" href="#">Siguiente →</a><a href="https://translate.google.com/?sl=en&tl=es&op=translate" target="_blank" rel="noopener noreferrer">🌐 Google Traductor ↗</a></nav><footer>© RIW · Rhynus Interactive Works · Voz del navegador cuando esté disponible · Sin cuentas ni seguimiento.</footer></main><script>
 const listening=[
 {title:"Everyday Objects",words:[["Apple","🍎"],["Book","📖"],["Key","🔑"],["Clock","🕰️"],["Chair","🪑"],["Phone","📱"]]},
@@ -152,8 +249,8 @@ const KEY="riw-english-lab-voice";
 const female=/\b(google uk english female|samantha|victoria|karen|moira|fiona|tessa|serena|susan|hazel|zira|aria|jenny|sonia|libby|maisie|natasha|emma|olivia|amy|joanna|salli|ivy|kimberly|nicole|raveena|allison|ava|kate)\b/i;
 const male=/\b(google uk english male|daniel|alex|fred|tom|oliver|ryan|guy|david|mark|george|brian|arthur|matthew|joey|justin|kevin|michael|james|stephen|alfie)\b/i;
 let choice="female";try{choice=localStorage.getItem(KEY)||"female"}catch(e){}
-const box=document.createElement("div");box.id="riw-voice-box";box.innerHTML='<label for="riw-voice-choice">🎙️ Elige la voz de pronunciación</label><select id="riw-voice-choice"><option value="female">👩 Voz femenina</option><option value="male">👨 Voz masculina</option></select><p id="riw-voice-hint" aria-live="polite"></p>';
-function init(){const main=document.querySelector("main")||document.body;const header=main.querySelector("header");const panel=main.querySelector("section.panel");if(!panel)throw new Error("Panel del desafío no encontrado");const controls=panel.querySelector(".controls");if(!controls)throw new Error("Controles no encontrados");panel.insertBefore(box,controls);const select=document.getElementById("riw-voice-choice");select.value=choice;select.addEventListener("change",()=>{choice=select.value;try{localStorage.setItem(KEY,choice)}catch(e){};updateHint();});updateHint();}
+const box=document.createElement("div");box.id="riw-voice-box";box.innerHTML='<label for="riw-voice-choice">🎙️ Voz</label><select id="riw-voice-choice"><option value="female">👩 Voz femenina</option><option value="male">👨 Voz masculina</option></select><p id="riw-voice-hint" aria-live="polite"></p>';
+function init(){const main=document.querySelector("main")||document.body;const header=main.querySelector("header");const panel=main.querySelector("section.panel");if(!panel)throw new Error("Panel del desafío no encontrado");const controls=panel.querySelector(".controls");if(!controls)throw new Error("Controles no encontrados");panel.insertBefore(box,panel.querySelector("#stage"));const select=document.getElementById("riw-voice-choice");select.value=choice;select.addEventListener("change",()=>{choice=select.value;try{localStorage.setItem(KEY,choice)}catch(e){};updateHint();});updateHint();}
 function voices(){if(!("speechSynthesis" in window))return[];return speechSynthesis.getVoices().filter(v=>/^en([-_]|$)/i.test(v.lang));}
 function preferred(){const list=voices(),pattern=choice==="male"?male:female;return list.find(v=>/^en-gb$/i.test(v.lang)&&pattern.test(v.name))||list.find(v=>pattern.test(v.name))||null;}
 function updateHint(){const hint=document.getElementById("riw-voice-hint");if(!hint)return;const v=preferred(),list=voices();hint.textContent=v?"Voz seleccionada: "+v.name+" ("+v.lang+").":list.length?"Tu navegador no identifica una voz "+(choice==="male"?"masculina":"femenina")+" en inglés. Se usará una voz inglesa disponible.":"Las voces se cargarán según el navegador; pulsa 🔊 para probar.";}
