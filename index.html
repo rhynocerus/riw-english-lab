@@ -234,7 +234,116 @@ main{padding:8px 10px!important}header{gap:7px!important}header img,header .bran
 main{padding-top:7px!important;padding-bottom:7px!important}header img,header .brand img{max-height:48px!important;width:115px!important}h1{margin:6px 0 4px!important;font-size:1.55rem!important}.panel{padding:10px 14px!important;margin:7px 0!important}.bar,.progress{margin:5px 0 8px!important}.cards{margin:8px 0!important}.tile{min-height:90px!important}.scene .picture{font-size:2.3rem!important}#riw-voice-box{padding:5px 10px!important;margin:5px 0!important}#riw-voice-hint{display:none}.nav{margin:8px 0!important}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style></head><body><main>
+</style>
+<style id="riw-idioms-redesign-v1">
+/* RIW English Lab · Idioms visual refresh. Existing quiz logic remains untouched. */
+:root{color-scheme:dark}
+body{background:radial-gradient(ellipse 65% 40% at 50% -8%,#21586a 0%,transparent 78%),radial-gradient(circle at 100% 38%,#12384c 0%,transparent 45%),#091522;color:#f2f8ff}
+main{max-width:1040px;margin:0 auto;padding:28px 28px 55px;display:flex;flex-direction:column;align-items:stretch}
+#riw-english-lab-identity-v2{order:0;width:min(100%,300px);max-width:300px;margin:5px auto 4px;filter:drop-shadow(0 9px 20px #0009)}
+#riw-english-lab-identity-v2 img{border-radius:0}
+main>h1{order:1;text-align:center;font-weight:850;font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-.045em;margin:13px auto 7px;line-height:1.12}
+main>h1 span{color:#76f0d0;text-shadow:0 0 22px #55bba74d}
+main>h1+p{order:1;text-align:center;margin:0 auto 24px;max-width:760px;font-size:1.02rem;color:#b8d1dc}
+#riw-voice-box{order:2;align-self:stretch;width:100%;max-width:none;margin:0 0 18px!important;padding:15px 19px!important;background:linear-gradient(145deg,#203d50,#142c3d)!important;border:1px solid #4a7887!important;border-radius:17px!important;box-shadow:inset 0 1px #ffffff1c,0 12px 26px #0003}
+#riw-voice-box label{font-size:.92rem;letter-spacing:.015em;color:#eafdf9}
+#riw-voice-box select{max-width:480px!important;border:1px solid #7cb9b7;background:#e9f8f6;color:#143240;min-height:45px}
+#riw-voice-hint{color:#b5d4d6!important}
+main>.panel{order:3;display:block;margin:0!important;padding:clamp(20px,3vw,32px)!important;background:linear-gradient(155deg,#1a3547,#122839 75%);border:1px solid #416a7c;border-radius:24px!important;box-shadow:inset 0 1px #ffffff1b,0 18px 44px #0005!important}
+.panel>.toolbar:first-child{align-items:center;gap:12px;padding-bottom:5px}
+#counter{display:inline-flex;align-items:center;border:1px solid #398c8b;border-radius:999px;background:#174b55;padding:8px 13px;color:#86f4d4;font-size:.88rem}
+#score{background:#253b4b;border:1px solid #4a6677;border-radius:999px;padding:8px 13px;color:#ffe4a4;font-weight:750;font-size:.88rem}
+.progress{height:12px;margin:15px 0 24px!important;background:#2b4555;border-radius:999px;box-shadow:inset 0 2px 5px #0006}
+.progress>div{background:linear-gradient(90deg,#1cb8b7,#8df4bf);border-radius:999px;box-shadow:0 0 14px #41e8ca7a}
+.quiz-context{padding:6px 0 10px}
+.quiz-context>.muted{font-size:.94rem;color:#a9c8d2}
+.expression{font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.12;letter-spacing:-.035em;margin:13px 0;color:#fff;text-shadow:0 4px 16px #0005}
+#situation{font-size:1.05rem;color:#d4e4ed;margin:12px 0 19px}
+.quiz-context .toolbar{display:flex;gap:12px;flex-wrap:wrap}
+.quiz-context .toolbar button{background:linear-gradient(180deg,#377c9b,#20516c 54%,#163c55);border:1px solid #70aeca;border-bottom-color:#0b2c43;box-shadow:inset 0 1px #ffffff40,0 5px 0 #0b2638,0 8px 18px #0005;border-radius:13px;min-height:48px;padding:11px 18px;font-weight:750;transition:transform .15s,filter .15s}
+.quiz-context .toolbar button:hover{filter:brightness(1.15);transform:translateY(-2px)}
+.quiz-context .toolbar button:active{transform:translateY(3px);box-shadow:inset 0 1px #ffffff22,0 2px 0 #0b2638}
+#voiceStatus{margin:19px 0 10px!important;padding:12px 14px!important;border-radius:12px!important;background:#20394a!important;border-left:4px solid #ffcb67!important;color:#c8dde6;font-size:.84rem!important}
+.quiz-answers{padding-top:5px}
+.options{display:grid;grid-template-columns:1fr;gap:12px;margin:10px 0 15px}
+.options button{display:flex;align-items:center;min-height:58px;padding:14px 19px;border-radius:14px;background:linear-gradient(180deg,#294d62,#1e3e52);border:1px solid #507d92;box-shadow:inset 0 1px #ffffff24,0 4px 0 #0d2635,0 8px 16px #0003;color:#f5fbff;font-size:1rem;transition:transform .14s,filter .14s,border-color .14s}
+.options button:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.16);border-color:#91e3d0}
+.options button:focus-visible,.quiz-context button:focus-visible,#next:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.options button.correct{background:linear-gradient(180deg,#277d63,#165943);border-color:#85f4b9;color:white}
+.options button.wrong{background:linear-gradient(180deg,#97514f,#693639);border-color:#f8ad9c;color:white}
+.options button:disabled{opacity:1;cursor:default}
+.feedback{border-left:4px solid #8df4bf;border-radius:11px;background:#204b4a;padding:15px 18px;color:#f1fffb}
+#next.primary{background:linear-gradient(180deg,#ffdf84,#eab44b);border:1px solid #ffe7a6;border-bottom-color:#926b22;color:#182e36;box-shadow:inset 0 1px #fff8,0 5px 0 #936520,0 10px 22px #0005;min-height:52px;border-radius:13px;font-weight:850}
+#next.primary:hover{filter:brightness(1.08)}
+main>nav[data-riw-navigation]{order:4;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px!important;margin:22px 0 0!important;padding:0!important;border:0!important}
+main>nav[data-riw-navigation] a{display:flex;justify-content:center;align-items:center;text-align:center;min-height:49px;padding:10px 13px;border-radius:13px;border:1px solid #568da0;background:linear-gradient(180deg,#28566a,#17384c);box-shadow:inset 0 1px #ffffff24,0 4px 0 #0c2535;color:#b9f8e7!important;font-size:.93rem;font-weight:700;text-decoration:none}
+main>nav[data-riw-navigation] a:hover{filter:brightness(1.15)}
+main>footer{order:5;text-align:center;margin:34px 0 0;color:#9ab5c4;font-size:.78rem}
+@media(min-width:920px){.panel{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:30px;align-items:start}.panel>.toolbar:first-child,.panel>.progress{grid-column:1/-1}.quiz-context{grid-column:1}.quiz-answers{grid-column:2;padding-top:0}.options{margin-top:0}.quiz-context #voiceStatus{margin-bottom:0!important}}
+@media(max-width:700px){main{padding:16px 12px 35px!important}#riw-english-lab-identity-v2{width:190px!important;margin:4px auto!important}main>h1{font-size:clamp(1.7rem,7vw,2.4rem)!important;margin:10px 0 8px!important}main>h1+p{font-size:.91rem;margin-bottom:16px!important}#riw-voice-box{padding:12px!important;margin-bottom:12px!important}main>.panel{padding:16px!important;margin:0!important}.expression{font-size:2rem}.quiz-context .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.quiz-context .toolbar button{font-size:.81rem;padding:10px 6px}.options button{min-height:54px;padding:12px}.progress{margin:12px 0 16px!important}main>nav[data-riw-navigation]{grid-template-columns:1fr!important;gap:9px!important}main>nav[data-riw-navigation] a{min-height:44px}main>footer{margin-top:22px}}
+@media(max-width:360px){.quiz-context .toolbar{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.options button,.quiz-context button{transition:none}}
+</style>
+<style id="riw-idioms-hud-consistency-v2">
+/* HUD aligned to the other RIW laboratories; quiz functionality unchanged. */
+main>.riw-idioms-hud{order:0;display:block;width:100%;padding:16px 22px 12px;margin:0 0 15px;border:1px solid #456d7b;border-radius:17px;background:linear-gradient(135deg,#214351,#142b3b);box-shadow:inset 0 1px #ffffff22,0 12px 28px #0003}
+.riw-idioms-hud-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.riw-idioms-hud-heading{min-width:0;flex:1}
+.riw-idioms-hud-heading h1{font-size:clamp(1.3rem,2.5vw,1.85rem)!important;line-height:1.15;letter-spacing:-.02em;margin:0 0 7px!important;text-align:left;font-weight:800}
+.riw-idioms-hud-heading h1 span{color:#75e6c6}
+.riw-idioms-hud-heading p{font-size:.87rem;line-height:1.4;margin:0;color:#c6dbe3}
+.riw-idioms-hud #riw-english-lab-identity-v2{width:125px!important;max-width:28%;flex:0 0 125px;margin:0!important;filter:none;order:initial}
+.riw-idioms-hud #riw-english-lab-identity-v2 img{display:block;width:100%;height:auto;max-height:85px;object-fit:contain}
+#riw-idioms-voice-slot{margin:14px 0 12px;min-width:0}
+#riw-idioms-voice-slot #riw-voice-box{width:100%;max-width:none;margin:0!important;padding:10px 12px!important;border-radius:12px!important;background:#173743!important;box-shadow:none!important}
+#riw-idioms-voice-slot #riw-voice-box label{font-size:.86rem;margin-bottom:5px}
+#riw-idioms-voice-slot #riw-voice-box select{width:100%;max-width:100%!important;min-height:40px;padding:7px 10px!important}
+#riw-idioms-voice-slot #riw-voice-hint{margin:5px 0 0;font-size:.75rem}
+@media(max-width:600px){main>.riw-idioms-hud{padding:12px!important;margin-bottom:12px}.riw-idioms-hud-top{gap:8px}.riw-idioms-hud-heading h1{font-size:1.25rem!important}.riw-idioms-hud-heading p{font-size:.78rem}.riw-idioms-hud #riw-english-lab-identity-v2{flex-basis:85px;width:85px!important;max-width:30%}.riw-idioms-hud #riw-english-lab-identity-v2 img{max-height:65px}}
+@media(max-width:380px){.riw-idioms-hud-top{align-items:flex-start}.riw-idioms-hud-heading h1{font-size:1.1rem!important}}
+</style>
+<style id="riw-secondary-progress-v1">
+/* RIW English Lab: el desafío y los puntos son información secundaria. */
+.panel > .riw-secondary-progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(155, 195, 201, .23);
+  font-size: .78rem;
+  color: #a9bec8;
+}
+.panel > .riw-secondary-progress > .toolbar,
+.panel > .riw-secondary-progress > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #a9bec8;
+  font-size: inherit;
+}
+.panel > .riw-secondary-progress #counter,
+.panel > .riw-secondary-progress #score {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+.panel > .riw-secondary-progress > .progress,
+.panel > .riw-secondary-progress > .bar {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  opacity: .65;
+}
+@media(max-width:600px) {
+  .panel > .riw-secondary-progress {margin-top: 14px; padding-top: 10px;}
+}
+</style>
+</head><body><main>
 
 <div id="riw-intro" hidden
      role="dialog"
@@ -254,28 +363,32 @@ main{padding-top:7px!important;padding-bottom:7px!important}header img,header .b
   </div>
 </div>
 
-<div id="riw-english-lab-identity-v2">
-  <picture>
-    <source media="(max-width: 600px)"
-      srcset="assets/brand/logo/web/english-lab-horizontal.webp">
-    <img
-      src="assets/brand/logo/web/english-lab-horizontal.webp"
-      alt="RIW English Lab"
-      width="960"
-      height="480"
-      decoding="async">
-  </picture>
+<header class="riw-idioms-hud" aria-label="Cabecera del laboratorio">
+  <div class="riw-idioms-hud-top">
+    <div class="riw-idioms-hud-heading">
+      <h1>Don't take it <span>literally!</span> 🗣️</h1>
+      <p>Seis expresiones. Seis situaciones reales. Aprende lo que los ingleses <em>quieren decir</em>, no solo lo que dicen.</p>
+    </div>
+    <div id="riw-english-lab-identity-v2">
+      <img src="assets/brand/logo/web/english-lab-horizontal.webp" alt="RIW English Lab" width="960" height="480" decoding="async">
+    </div>
+  </div>
+</header>
+<section class="panel" aria-live="polite"><div class="quiz-context"><p class="muted">¿Qué significa esta expresión en la situación indicada?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar expresión</button><button id="exampleAudio" type="button">🔊 Escuchar ejemplo</button></div><div id="riw-idioms-voice-slot"></div><p id="voiceStatus" class="muted" style="font-size:.78rem;line-height:1.45;padding:9px 11px;border-left:3px solid #f4b84b;background:#203342;border-radius:7px">🔊 <strong>Consejo de pronunciación:</strong> Para escuchar voces inglesas más naturales, prueba Chrome en Android con una voz inglesa instalada. En Firefox y otros navegadores, la calidad puede variar según las voces disponibles. Si suena robótico, ¡no es tu inglés! 😄</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div>
+<div class="riw-secondary-progress" aria-label="Progreso y puntuación">
+<div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div>
+<div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div>
 </div>
-<h1>Don't take it <span>literally!</span> 🗣️</h1><p>Seis expresiones. Seis situaciones reales. Aprende lo que los ingleses <em>quieren decir</em>, no solo lo que dicen.</p><section class="panel" aria-live="polite"><div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div><div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div><div class="quiz-context"><p class="muted">¿Qué significa esta expresión en la situación indicada?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar expresión</button><button id="exampleAudio" type="button">🔊 Escuchar ejemplo</button></div><p id="voiceStatus" class="muted" style="font-size:.78rem;line-height:1.45;padding:9px 11px;border-left:3px solid #f4b84b;background:#203342;border-radius:7px">🔊 <strong>Consejo de pronunciación:</strong> Para escuchar voces inglesas más naturales, prueba Chrome en Android con una voz inglesa instalada. En Firefox y otros navegadores, la calidad puede variar según las voces disponibles. Si suena robótico, ¡no es tu inglés! 😄</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div></section>
+</section>
 <nav data-riw-navigation="v1" aria-label="Navegación English Lab"
 style="display:flex;flex-wrap:wrap;justify-content:center;
 gap:12px;margin:24px 0;padding:18px;
 border:1px solid #7c9c8a;border-radius:14px">
 <a href="lecciones/good-better-best/index.html" style="color:#80eac7">← Anterior</a>
-<a href="lecciones/index.html" style="color:#80eac7">⌂ Ver los 11 ejercicios</a>
+<a href="lecciones/index.html" style="color:#80eac7">⌂ Ver los 24 laboratorios</a>
 <a href="lecciones/false-friends/index.html" style="color:#80eac7">Siguiente →</a>
 </nav>
-<footer>© RIW · Rhynus Interactive Works · Piloto educativo v0.2 · Sin cuentas, anuncios ni seguimiento. Voz del navegador cuando esté disponible. <a href="https://rhynus-interactive-works.rhynus.chatgpt.site/aprende-jugando/" style="color:#80eac7">Aprende Jugando</a>.</footer></main><script>
+<footer>© RIW · Rhynus Interactive Works · Piloto educativo RIW · Sin cuentas, anuncios ni seguimiento. Voz del navegador cuando esté disponible. <a href="https://rhynus-interactive-works.rhynus.chatgpt.site/aprende-jugando/" style="color:#80eac7">Aprende Jugando</a>.</footer></main><script>
 const lessons=[
 {idiom:'Break the ice',situation:'You meet a new group of students. Someone starts a fun conversation.',example:'A quick game can help break the ice.',options:['Romper algo de hielo','Hacer que la gente se sienta cómoda','Terminar una reunión'],correct:1,explain:'Break the ice significa romper la tensión inicial y facilitar la conversación.'},
 {idiom:'A piece of cake',situation:'Your friend says the English quiz was very easy.',example:'That quiz was a piece of cake!',options:['Algo muy sencillo','Un pastel delicioso','Una tarea imposible'],correct:0,explain:'A piece of cake significa que algo es muy fácil.'},
@@ -337,7 +450,7 @@ const female=/\b(google uk english female|samantha|victoria|karen|moira|fiona|te
 const male=/\b(google uk english male|daniel|alex|fred|tom|oliver|ryan|guy|david|mark|george|brian|arthur|matthew|joey|justin|kevin|michael|james|stephen|alfie)\b/i;
 let choice="female";try{choice=localStorage.getItem(KEY)||"female"}catch(e){}
 const box=document.createElement("div");box.id="riw-voice-box";box.innerHTML='<label for="riw-voice-choice">🎙️ Elige la voz de pronunciación</label><select id="riw-voice-choice"><option value="female">👩 Voz femenina</option><option value="male">👨 Voz masculina</option></select><p id="riw-voice-hint" aria-live="polite"></p>';
-function init(){const main=document.querySelector("main")||document.body;const header=main.querySelector("header");if(header)header.insertAdjacentElement("afterend",box);else main.prepend(box);const select=document.getElementById("riw-voice-choice");select.value=choice;select.addEventListener("change",()=>{choice=select.value;try{localStorage.setItem(KEY,choice)}catch(e){};updateHint();});updateHint();}
+function init(){const main=document.querySelector("main")||document.body;const header=main.querySelector("header");const slot=document.getElementById("riw-idioms-voice-slot");if(slot)slot.append(box);else if(header)header.insertAdjacentElement("afterend",box);else main.prepend(box);const select=document.getElementById("riw-voice-choice");select.value=choice;select.addEventListener("change",()=>{choice=select.value;try{localStorage.setItem(KEY,choice)}catch(e){};updateHint();});updateHint();}
 function voices(){if(!("speechSynthesis" in window))return[];return speechSynthesis.getVoices().filter(v=>/^en([-_]|$)/i.test(v.lang));}
 function preferred(){const list=voices(),pattern=choice==="male"?male:female;return list.find(v=>/^en-gb$/i.test(v.lang)&&pattern.test(v.name))||list.find(v=>pattern.test(v.name))||null;}
 function updateHint(){const hint=document.getElementById("riw-voice-hint");if(!hint)return;const v=preferred(),list=voices();hint.textContent=v?"Voz seleccionada: "+v.name+" ("+v.lang+").":list.length?"Tu navegador no identifica una voz "+(choice==="male"?"masculina":"femenina")+" en inglés. Se usará una voz inglesa disponible.":"Las voces se cargarán según el navegador; pulsa 🔊 para probar.";}

@@ -78,7 +78,58 @@
   footer{margin:10px 0;font-size:.7rem}
 }
 
-</style></head><body><main><header><div class="brand"><img src="https://rhynus-interactive-works.rhynus.chatgpt.site/riw-common/logo.png" alt="Logotipo oficial de Rhynus Interactive Works"><strong>ENGLISH LAB</strong></div></header><h1>Grammar <span>Rescue!</span> 🚑</h1><p>Seis frases necesitan ayuda. Encuentra los errores y rescata el inglés.</p><section class="panel" aria-live="polite"><div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div><div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div><div class="quiz-context"><p class="muted">¿Cuál es la versión gramaticalmente correcta?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar frase</button><button id="exampleAudio" type="button">🔊 Escuchar corrección</button></div><p id="voiceStatus" class="muted">La voz depende de las voces instaladas en tu navegador.</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div></section>
+</style><link rel="stylesheet" href="../../assets/css/riw-labs-unified.css">
+<link rel="stylesheet" href="../../assets/css/riw-labs-layout.css">
+<script defer src="../../assets/js/riw-labs-layout.js"></script>
+<link rel="stylesheet" href="../../assets/css/riw-labs-navigation-v2.css">
+<script defer src="../../assets/js/riw-labs-navigation-v2.js"></script>
+<style id="riw-secondary-progress-v1">
+/* RIW English Lab: el desafío y los puntos son información secundaria. */
+.panel > .riw-secondary-progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(155, 195, 201, .23);
+  font-size: .78rem;
+  color: #a9bec8;
+}
+.panel > .riw-secondary-progress > .toolbar,
+.panel > .riw-secondary-progress > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #a9bec8;
+  font-size: inherit;
+}
+.panel > .riw-secondary-progress #counter,
+.panel > .riw-secondary-progress #score {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+.panel > .riw-secondary-progress > .progress,
+.panel > .riw-secondary-progress > .bar {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  opacity: .65;
+}
+@media(max-width:600px) {
+  .panel > .riw-secondary-progress {margin-top: 14px; padding-top: 10px;}
+}
+</style>
+</head><body><main><header><div class="brand"><img src="https://rhynus-interactive-works.rhynus.chatgpt.site/riw-common/logo.png" alt="Logotipo oficial de Rhynus Interactive Works"><strong>ENGLISH LAB</strong></div></header><h1>Grammar <span>Rescue!</span> 🚑</h1><p>Seis frases necesitan ayuda. Encuentra los errores y rescata el inglés.</p><section class="panel" aria-live="polite"><div class="quiz-context"><p class="muted">¿Cuál es la versión gramaticalmente correcta?</p><div id="idiom" class="expression"></div><p id="situation"></p><div class="toolbar"><button id="listen" type="button">🔊 Escuchar frase</button><button id="exampleAudio" type="button">🔊 Escuchar corrección</button></div><p id="voiceStatus" class="muted">La voz depende de las voces instaladas en tu navegador.</p></div><div class="quiz-answers"><div id="options" class="options"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button" style="width:100%">Siguiente desafío →</button></div>
+<div class="riw-secondary-progress" aria-label="Progreso y puntuación">
+<div class="toolbar" style="justify-content:space-between"><span id="counter" class="tag">Desafío 1 / 6</span><span id="score">⭐ 0 puntos</span></div>
+<div class="progress" aria-label="Progreso"><div id="bar" style="width:16.67%"></div></div>
+</div>
+</section>
 <nav data-riw-navigation="v1" aria-label="Navegación English Lab"
 style="display:flex;flex-wrap:wrap;justify-content:center;
 gap:12px;margin:24px 0;padding:18px;

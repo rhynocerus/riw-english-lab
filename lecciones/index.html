@@ -40,113 +40,411 @@ main{padding:8px 10px!important}header{gap:7px!important}header img,header .bran
 main{padding-top:7px!important;padding-bottom:7px!important}header img,header .brand img{max-height:48px!important;width:115px!important}h1{margin:6px 0 4px!important;font-size:1.55rem!important}.panel{padding:10px 14px!important;margin:7px 0!important}.bar,.progress{margin:5px 0 8px!important}.cards{margin:8px 0!important}.tile{min-height:90px!important}.scene .picture{font-size:2.3rem!important}#riw-voice-box{padding:5px 10px!important;margin:5px 0!important}#riw-voice-hint{display:none}.nav{margin:8px 0!important}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style></head>
+</style>
+<style id="riw-index-refresh-v1">
+main {
+  max-width: 1200px;
+}
+
+main > h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: -.025em;
+  color: #ffffff;
+}
+
+main > h1 .riw-spark {
+  color: #80eac7;
+}
+
+main > .intro {
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+main > .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(245px,1fr));
+  gap: 16px !important;
+  margin-top: 24px !important;
+}
+
+main .lesson {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 175px;
+  padding: 20px !important;
+  gap: 12px !important;
+  border: 1px solid #426c75;
+  border-top: 4px solid var(--accent,#80eac7);
+  border-radius: 18px !important;
+  background: linear-gradient(155deg,#254450,#172b39 75%);
+  box-shadow: 0 7px 18px #0004,inset 0 1px #ffffff12;
+  transition: transform .18s ease,box-shadow .18s ease;
+}
+
+main .lesson:nth-child(4n+1) { --accent:#80eac7; }
+main .lesson:nth-child(4n+2) { --accent:#f3c979; }
+main .lesson:nth-child(4n+3) { --accent:#a6b9ff; }
+main .lesson:nth-child(4n)   { --accent:#f0a6ce; }
+
+main .lesson strong {
+  font-size: clamp(1.08rem,1.6vw,1.2rem) !important;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+main .lesson span {
+  font-size: .95rem;
+  line-height: 1.45;
+  color: #d0e2df;
+}
+
+main .lesson small {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+main .lesson:hover,
+main .lesson:focus-visible {
+  transform: translateY(-4px);
+  background: linear-gradient(155deg,#305765,#1d3945);
+  box-shadow: 0 12px 25px #0007;
+  border-color: var(--accent);
+  outline-offset: 3px;
+}
+
+@media(max-width:600px) {
+  main > .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  main .lesson {
+    min-height: 0;
+    padding: 17px !important;
+    gap: 9px !important;
+  }
+
+  main .lesson strong {
+    font-size: 1.12rem !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  main .lesson {
+    transition: none;
+  }
+  main .lesson:hover {
+    transform: none;
+  }
+}
+</style>
+
+<style id="riw-index-mascot">
+.riw-index-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.riw-index-hero h1 {
+  margin: 0 !important;
+  min-width: 0;
+}
+
+.riw-index-hero img {
+  width: clamp(75px, 12vw, 125px);
+  height: auto;
+  max-height: 125px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 10px #0006);
+}
+
+@media(max-width:600px) {
+  .riw-index-hero {
+    gap: 10px;
+  }
+
+  .riw-index-hero img {
+    width: 75px;
+    max-height: 85px;
+  }
+}
+</style>
+
+<style id="riw-lab-cards-v2">
+
+main > .grid {
+  grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr)) !important;
+  gap: 20px !important;
+}
+
+main .lesson {
+  --accent: #6ce9c6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+  padding: 22px !important;
+  gap: 12px !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      color-mix(in srgb,var(--accent) 24%,transparent),
+      transparent 55%
+    ),
+    linear-gradient(145deg,#29434e,#142330 85%) !important;
+  box-shadow:
+    inset 0 1px 0 #ffffff24,
+    0 8px 0 #09151e,
+    0 15px 25px #0005 !important;
+  transform: translateY(0);
+  isolation: isolate;
+}
+
+main .lesson:nth-child(4n+1) { --accent:#6ce9c6; }
+main .lesson:nth-child(4n+2) { --accent:#ffc778; }
+main .lesson:nth-child(4n+3) { --accent:#aeb7ff; }
+main .lesson:nth-child(4n)   { --accent:#ffacd6; }
+
+main .lesson::before {
+  content: "LAB " counter(riw-lab,decimal-leading-zero);
+  display: block;
+  width: fit-content;
+  padding: 5px 11px;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  background: #08192399;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+main > .grid {
+  counter-reset: riw-lab;
+}
+
+main .lesson {
+  counter-increment: riw-lab;
+}
+
+main .lesson strong {
+  display: block;
+  font-size: clamp(1.12rem,1.6vw,1.3rem) !important;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+main .lesson span {
+  font-size: .96rem !important;
+  line-height: 1.5;
+  color: #d6e5e8;
+}
+
+main .lesson small {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff24;
+  font-size: .9rem !important;
+  font-weight: 750;
+  color: var(--accent);
+}
+
+main .lesson small::after {
+  content: "↗";
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #11232e;
+  font-size: 1.3rem;
+  box-shadow: 0 3px 7px #0005;
+}
+
+main .lesson:hover,
+main .lesson:focus-visible {
+  transform: translateY(-5px);
+  filter: brightness(1.12);
+  box-shadow:
+    inset 0 1px 0 #ffffff30,
+    0 12px 0 #09151e,
+    0 20px 30px #0007 !important;
+}
+
+@media(max-width:600px) {
+  main > .grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  main .lesson {
+    min-height: 205px !important;
+    padding: 18px !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  main .lesson {
+    transition: none !important;
+  }
+  main .lesson:hover {
+    transform: none;
+  }
+}
+</style>
+
+<style id="riw-card-art-v1">
+/* RIW · 24 pequeñas ilustraciones decorativas; enlaces intactos */
+.grid .lesson{position:relative;isolation:isolate;overflow:hidden}
+.grid .lesson .riw-card-art{position:absolute;right:5px;top:18px;width:78px;height:74px;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none;z-index:0;opacity:.94}
+.grid .lesson > :not(.riw-card-art){position:relative;z-index:1}
+.grid .lesson strong,.grid .lesson p,.grid .lesson small{max-width:calc(100% - 42px)}
+@media(max-width:650px){.grid .lesson .riw-card-art{width:65px;height:65px;right:3px;top:17px}}
+</style>
+
+<style id="riw-card-art-clean-v2">
+/* 24 ilustraciones con transparencia real y aire alrededor */
+.grid .lesson .riw-card-art {
+  top: 15px !important;
+  right: 7px !important;
+  width: 78px !important;
+  height: 78px !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+@media(max-width:650px){
+ .grid .lesson .riw-card-art{width:64px!important;height:64px!important;right:5px!important}
+}
+</style>
+</head>
 <body><main>
 <header>
 <img src="../assets/brand/logo/web/english-lab-horizontal.webp"
 alt="Logotipo oficial de Rhynus Interactive Works">
 <strong>RHYNUS INTERACTIVE WORKS · ENGLISH LAB</strong>
 </header>
-<h1>🌸 Choose your challenge! 🦏</h1>
+<div class="riw-index-hero"><h1><span class="riw-spark">✦</span> Choose your challenge!</h1><img src="../assets/brand/mascotas/riw-rhino.png" alt="Mascota rinoceronte RIW"></div>
 <p class="intro">24 laboratorios · 144 desafíos.
 Elige, escucha, aprende y repite a tu ritmo.</p>
 <div class="grid">
 
-<a class="lesson" href="../index.html">
+<a class="lesson" href="../index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-01.webp?v=2')"></span>
 <strong>🎭 01 · Idioms</strong>
 <span>Expresiones que no se traducen literalmente.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/false-friends/index.html">
+<a class="lesson" href="../lecciones/false-friends/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-02.webp?v=2')"></span>
 <strong>🕵️ 02 · False Friends</strong>
 <span>Palabras engañosamente parecidas.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/phrasal-verbs/index.html">
+<a class="lesson" href="../lecciones/phrasal-verbs/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-03.webp?v=2')"></span>
 <strong>🧩 03 · Phrasal Verbs</strong>
 <span>Verbos que cambian de significado.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/time-travelers/index.html">
+<a class="lesson" href="../lecciones/time-travelers/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-04.webp?v=2')"></span>
 <strong>⏳ 04 · Time Travelers</strong>
 <span>Viaja entre los tiempos verbales.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/sound-detective/index.html">
+<a class="lesson" href="../lecciones/sound-detective/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-05.webp?v=2')"></span>
 <strong>🎧 05 · Sound Detective</strong>
 <span>Escucha y descubre sonidos ingleses.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/real-life-english/index.html">
+<a class="lesson" href="../lecciones/real-life-english/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-06.webp?v=2')"></span>
 <strong>🌍 06 · Real-Life English</strong>
 <span>Inglés para situaciones reales.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/word-partners/index.html">
+<a class="lesson" href="../lecciones/word-partners/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-07.webp?v=2')"></span>
 <strong>🤝 07 · Word Partners</strong>
 <span>Palabras que suelen ir juntas.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/grammar-rescue/index.html">
+<a class="lesson" href="../lecciones/grammar-rescue/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-08.webp?v=2')"></span>
 <strong>🚑 08 · Grammar Rescue</strong>
 <span>Detecta y corrige errores.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/question-quest/index.html">
+<a class="lesson" href="../lecciones/question-quest/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-09.webp?v=2')"></span>
 <strong>❓ 09 · Question Quest</strong>
 <span>Aprende a formular preguntas.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/everyday-expressions/index.html">
+<a class="lesson" href="../lecciones/everyday-expressions/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-10.webp?v=2')"></span>
 <strong>💬 10 · Everyday Expressions</strong>
 <span>Habla con naturalidad.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/good-better-best/index.html">
+<a class="lesson" href="../lecciones/good-better-best/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-11.webp?v=2')"></span>
 <strong>🌟 11 · Good, Better, Best!</strong>
 <span>La lección especial dedicada a Ronald.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/cognate-detective/index.html">
+<a class="lesson" href="../lecciones/cognate-detective/index.html"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-12.webp?v=2')"></span>
 <strong>🕵️ 12 · Cognate Detective</strong>
 <span>Cognados verdaderos y falsos: escucha, investiga y descubre.</span>
 <small>6 desafíos · Abrir actividad →</small>
 </a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=1"><strong>🎧 13 · Listen & Recognise 1</strong><span>Everyday Objects · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=1"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-13.webp?v=2')"></span><strong>🎧 13 · Listen & Recognise 1</strong><span>Everyday Objects · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=2"><strong>🎧 14 · Listen & Recognise 2</strong><span>Food & Drinks · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=2"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-14.webp?v=2')"></span><strong>🎧 14 · Listen & Recognise 2</strong><span>Food & Drinks · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=3"><strong>🎧 15 · Listen & Recognise 3</strong><span>Animals & Nature · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=3"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-15.webp?v=2')"></span><strong>🎧 15 · Listen & Recognise 3</strong><span>Animals & Nature · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=4"><strong>🎧 16 · Listen & Recognise 4</strong><span>Places & Transport · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=4"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-16.webp?v=2')"></span><strong>🎧 16 · Listen & Recognise 4</strong><span>Places & Transport · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=5"><strong>🎧 17 · Listen & Recognise 5</strong><span>Actions · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=5"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-17.webp?v=2')"></span><strong>🎧 17 · Listen & Recognise 5</strong><span>Actions · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=6"><strong>🎧 18 · Listen & Recognise 6</strong><span>Trickier Words · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=listen&amp;level=6"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-18.webp?v=2')"></span><strong>🎧 18 · Listen & Recognise 6</strong><span>Trickier Words · Escucha y reconoce imágenes.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=1"><strong>🎭 19 · Complete the Conversation 1</strong><span>At the Restaurant · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=1"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-19.webp?v=2')"></span><strong>🎭 19 · Complete the Conversation 1</strong><span>At the Restaurant · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=2"><strong>🎭 20 · Complete the Conversation 2</strong><span>At the Shop · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=2"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-20.webp?v=2')"></span><strong>🎭 20 · Complete the Conversation 2</strong><span>At the Shop · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=3"><strong>🎭 21 · Complete the Conversation 3</strong><span>Travel & Directions · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=3"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-21.webp?v=2')"></span><strong>🎭 21 · Complete the Conversation 3</strong><span>Travel & Directions · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=4"><strong>🎭 22 · Complete the Conversation 4</strong><span>Meeting People · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=4"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-22.webp?v=2')"></span><strong>🎭 22 · Complete the Conversation 4</strong><span>Meeting People · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=5"><strong>🎭 23 · Complete the Conversation 5</strong><span>Everyday Problems · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=5"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-23.webp?v=2')"></span><strong>🎭 23 · Complete the Conversation 5</strong><span>Everyday Problems · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 
-<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=6"><strong>🎭 24 · Complete the Conversation 6</strong><span>Natural Conversation · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
+<a class="lesson" href="../lecciones/interactive-series/index.html?type=dialogue&amp;level=6"><span class="riw-card-art" aria-hidden="true" style="background-image:url('../assets/english-lab/portadas/lab-24.webp?v=2')"></span><strong>🎭 24 · Complete the Conversation 6</strong><span>Natural Conversation · Completa diálogos en contexto.</span><small>6 desafíos · Abrir actividad →</small></a>
 </div>
 <footer>
 <p>© RIW · Rhynus Interactive Works</p>

@@ -1,0 +1,65 @@
+
+/* RIW English Lab · Navegación y voz v2 */
+
+#riw-voice-box.riw-voice-inside {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 12px 0 !important;
+  padding: 12px 14px !important;
+  border: 1px solid #477d81 !important;
+  border-radius: 14px !important;
+  background: #173744 !important;
+  box-sizing: border-box;
+}
+
+#riw-voice-box.riw-voice-inside select {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+}
+
+.riw-navigation-v2 {
+  display: grid !important;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 10px !important;
+  margin: 22px 0 !important;
+  padding: 14px !important;
+  border: 1px solid #456c79 !important;
+  border-radius: 16px !important;
+  background: #142b39 !important;
+}
+
+.riw-navigation-v2 a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+  min-height: 48px;
+  padding: 10px !important;
+  border: 1px solid #5c9b9d !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  background: linear-gradient(180deg,#347987,#174052) !important;
+  box-shadow: 0 4px 0 #0a2430 !important;
+}
+
+.riw-navigation-v2 a:hover,
+.riw-navigation-v2 a:focus-visible {
+  background: linear-gradient(180deg,#45a49c,#205d67) !important;
+  outline: 2px solid #a4f4d9;
+  outline-offset: 2px;
+}
+
+.riw-navigation-v2 a[aria-disabled="true"] {
+  opacity: .45;
+  pointer-events: none;
+}
+
+@media(max-width:650px) {
+  .riw-navigation-v2 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}

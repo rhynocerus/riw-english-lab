@@ -1,0 +1,104 @@
+
+/* RIW English Lab · Diseño común v1 */
+
+main > header.riw-unified-hud {
+  display: grid !important;
+  grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) 110px;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 14px 18px;
+  border: 1px solid #426c75;
+  border-radius: 16px;
+  background: linear-gradient(135deg,#254653,#132b39);
+  box-shadow: 0 7px 18px #0004;
+}
+
+.riw-unified-hud > h1 {
+  margin: 0 !important;
+  font-size: clamp(19px,2.2vw,25px) !important;
+  line-height: 1.2 !important;
+  overflow-wrap: anywhere;
+}
+
+.riw-unified-hud .riw-hud-name {
+  text-align: center;
+  color: #a3f1d8;
+  font-size: clamp(14px,1.5vw,17px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.riw-unified-hud .riw-hud-logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+}
+
+.riw-unified-hud .riw-hud-logo img {
+  width: 110px !important;
+  max-width: 100% !important;
+  max-height: 65px !important;
+  height: auto;
+  object-fit: contain;
+}
+
+main > .panel {
+  border-radius: 18px;
+  line-height: 1.5;
+}
+
+main > footer {
+  display: block;
+  text-align: center !important;
+  padding: 18px 12px;
+  margin: 25px auto 12px;
+  border-top: 1px solid #426c75;
+  color: #b9d0d0;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+main > footer a {
+  color: #80eac7;
+}
+
+main button.correct:not(:disabled),
+main .answers button.correct:not(:disabled),
+main .options button.correct:not(:disabled) {
+  background: linear-gradient(#51c99a,#166a51) !important;
+  border-color: #86f5c5 !important;
+}
+
+main button.wrong:not(:disabled),
+main .answers button.wrong:not(:disabled),
+main .options button.wrong:not(:disabled) {
+  background: linear-gradient(#d8787b,#79323e) !important;
+  border-color: #ffc0bd !important;
+}
+
+main button:disabled.correct,
+main button:disabled.wrong {
+  opacity: 1;
+}
+
+@media(max-width:600px) {
+  main > header.riw-unified-hud {
+    grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) 65px;
+    gap: 7px !important;
+    padding: 10px;
+  }
+
+  .riw-unified-hud > h1 {
+    font-size: clamp(16px,4.5vw,19px) !important;
+  }
+
+  .riw-unified-hud .riw-hud-name {
+    font-size: 13px;
+  }
+
+  .riw-unified-hud .riw-hud-logo img {
+    width: 65px !important;
+    max-height: 45px !important;
+  }
+}

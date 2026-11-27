@@ -177,7 +177,136 @@ footer {
   }
 }
 </style>
-</head><body><main><header><img src="../../assets/brand/logo/web/english-lab-horizontal.webp" alt="Logotipo oficial RIW English Lab"><strong>RIW · ENGLISH LAB</strong></header><h1 id="heading"></h1><p id="intro"></p><section class="panel"><div class="top"><strong id="counter"></strong><strong id="score">⭐ 0 puntos</strong></div><div class="bar"><div id="bar"></div></div><div id="stage"></div><div class="controls"><button id="hear" type="button">🔊 Escuchar</button><button id="slow" type="button">🐢 Más despacio</button></div><p id="status" class="muted" role="status"></p><div id="answers"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button">Siguiente →</button></section><nav class="nav" aria-label="Navegación del laboratorio"><a href="../index.html">⌂ Ir a la Colección</a><a id="prev" href="#">← Anterior</a><a id="following" href="#">Siguiente →</a><a href="https://translate.google.com/?sl=en&tl=es&op=translate" target="_blank" rel="noopener noreferrer">🌐 Google Traductor ↗</a></nav><footer>© RIW · Rhynus Interactive Works · Voz del navegador cuando esté disponible · Sin cuentas ni seguimiento.</footer></main><script>
+
+<style id="riw-hud-three-columns">
+main > header.riw-hud {
+  display: grid !important;
+  grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) 72px !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-height: 44px;
+  margin: 0 0 8px !important;
+}
+
+.riw-hud-practice {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+main > header .riw-hud-practice strong {
+  font-size: .82rem !important;
+  line-height: 1.2;
+  color: #eaf7f4;
+}
+
+.riw-hud-practice small {
+  font-size: .68rem;
+  line-height: 1.2;
+  color: #b4c9c5;
+}
+
+main > header .riw-hud-brand {
+  font-size: .76rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  color: #80eac7;
+}
+
+main > header.riw-hud img {
+  width: 72px !important;
+  max-width: 100% !important;
+  max-height: 42px !important;
+  object-fit: contain !important;
+  justify-self: end;
+}
+
+.riw-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media(max-width:400px) {
+  main > header.riw-hud {
+    grid-template-columns: minmax(0,1.35fr) minmax(0,1fr) 60px !important;
+    gap: 5px !important;
+  }
+
+  main > header.riw-hud img {
+    width: 60px !important;
+    max-height: 36px !important;
+  }
+
+  main > header .riw-hud-brand {
+    font-size: .66rem !important;
+  }
+
+  main > header .riw-hud-practice strong {
+    font-size: .72rem !important;
+  }
+
+  .riw-hud-practice small {
+    font-size: .62rem;
+  }
+}
+</style>
+<link rel="stylesheet" href="../../assets/css/riw-glossy-buttons.css"><link rel="stylesheet" href="../../assets/css/riw-labs-navigation-v2.css">
+<script defer src="../../assets/js/riw-labs-navigation-v2.js"></script>
+<style id="riw-secondary-progress-v1">
+/* RIW English Lab: el desafío y los puntos son información secundaria. */
+.panel > .riw-secondary-progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(155, 195, 201, .23);
+  font-size: .78rem;
+  color: #a9bec8;
+}
+.panel > .riw-secondary-progress > .toolbar,
+.panel > .riw-secondary-progress > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #a9bec8;
+  font-size: inherit;
+}
+.panel > .riw-secondary-progress #counter,
+.panel > .riw-secondary-progress #score {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+.panel > .riw-secondary-progress > .progress,
+.panel > .riw-secondary-progress > .bar {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  opacity: .65;
+}
+@media(max-width:600px) {
+  .panel > .riw-secondary-progress {margin-top: 14px; padding-top: 10px;}
+}
+</style>
+</head><body><main><header class="riw-hud"><div class="riw-hud-practice"><strong id="riw-hud-title"></strong><small id="riw-hud-subtitle"></small></div><strong class="riw-hud-brand">RIW English Lab</strong><img src="../../assets/brand/logo/web/english-lab-horizontal.webp" alt="Logotipo oficial RIW English Lab"></header><h1 id="heading" class="riw-sr-only"></h1><p id="intro" class="riw-sr-only"></p><section class="panel"><div id="stage"></div><div class="controls"><button id="hear" type="button">🔊 Escuchar</button><button id="slow" type="button">🐢 Más despacio</button></div><p id="status" class="muted" role="status"></p><div id="answers"></div><div id="feedback" class="feedback hidden" role="status"></div><button id="next" class="primary hidden" type="button">Siguiente →</button>
+<div class="riw-secondary-progress" aria-label="Progreso y puntuación">
+<div class="top"><strong id="counter"></strong><strong id="score">⭐ 0 puntos</strong></div>
+<div class="bar"><div id="bar"></div></div>
+</div>
+</section><nav class="nav" aria-label="Navegación del laboratorio"><a href="../index.html">⌂ Ir a la Colección</a><a id="prev" href="#">← Anterior</a><a id="following" href="#">Siguiente →</a><a href="https://translate.google.com/?sl=en&tl=es&op=translate" target="_blank" rel="noopener noreferrer">🌐 Google Traductor ↗</a></nav><footer>© RIW · Rhynus Interactive Works · Voz del navegador cuando esté disponible · Sin cuentas ni seguimiento.</footer></main><script>
 const listening=[
 {title:"Everyday Objects",words:[["Apple","🍎"],["Book","📖"],["Key","🔑"],["Clock","🕰️"],["Chair","🪑"],["Phone","📱"]]},
 {title:"Food & Drinks",words:[["Bread","🍞"],["Cheese","🧀"],["Coffee","☕"],["Water","💧"],["Banana","🍌"],["Egg","🥚"]]},
@@ -234,6 +363,10 @@ const imageQueries={Apple:"red,apple,fruit",Book:"open,book",Key:"metal,house,ke
 const params=new URLSearchParams(location.search),type=params.get("type")==="dialogue"?"dialogue":"listen",level=Math.max(1,Math.min(6,Number(params.get("level"))||1)),set=type==="listen"?listening[level-1]:dialogues[level-1],$=id=>document.getElementById(id);let i=0,score=0,answered=false,voiceStarted=false;
 $("heading").textContent=(type==="listen"?"🎧 Listen & Recognise":"🎭 Complete the Conversation")+" · "+level;
 $("intro").textContent=set.title+" · 6 desafíos · "+(type==="listen"?"Escucha la palabra y selecciona su imagen.":"Escucha el diálogo y completa la respuesta natural.");
+
+$("riw-hud-title").textContent =
+  (type==="listen" ? "🎧 Listening " : "🎭 Conversation ") + level;
+$("riw-hud-subtitle").textContent = set.title;
 $("prev").href="?type="+type+"&level="+Math.max(1,level-1);$("following").href="?type="+type+"&level="+Math.min(6,level+1);if(level===1)$("prev").style.display="none";if(level===6)$("following").style.display="none";
 function utter(t,rate=.88){if(!("speechSynthesis" in window)){$("status").textContent="La síntesis de voz no está disponible en este navegador.";return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-GB";u.rate=rate;const voices=speechSynthesis.getVoices();const v=voices.find(v=>v.lang.toLowerCase().startsWith("en-gb"))||voices.find(v=>v.lang.toLowerCase().startsWith("en"));if(v)u.voice=v;$("status").textContent=v?"Voz: "+v.name:"Voz inglesa del sistema";riwSpeak(u);}
 function spoken(){if(type==="listen")return set.words[i][0];const q=set.items[i];return q[0]+": "+q[1]+". "+q[2]+": "+q[4][q[5]];}

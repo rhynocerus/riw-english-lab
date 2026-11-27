@@ -1,0 +1,110 @@
+
+/* RIW English Lab · Estilo compartido v1 */
+
+:root {
+  --riw-accent: #75e2c1;
+  --riw-focus: #ffe08b;
+}
+
+/* Botones de ejercicios */
+main button:not(:disabled) {
+  position: relative;
+  border-radius: 10px !important;
+  border: 1px solid #2872ad !important;
+  background: linear-gradient(
+    #91ddff 0%,
+    #329de3 46%,
+    #1064a9 52%,
+    #073c78 100%
+  ) !important;
+  color: #ffffff !important;
+  font-size: clamp(14px, 1.5vw, 16px) !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  text-shadow: 0 1px 2px #001a35;
+  box-shadow:
+    inset 0 1px 0 #ffffff88,
+    0 3px 0 #062b4b,
+    0 5px 9px #0005 !important;
+  transition: transform .12s ease, filter .12s ease;
+}
+
+main button:hover:not(:disabled) {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+main button:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+main button:focus-visible,
+main a:focus-visible,
+main select:focus-visible {
+  outline: 3px solid var(--riw-focus) !important;
+  outline-offset: 3px !important;
+}
+
+/* Navegación */
+main .nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 15px;
+  margin: 3px;
+  border-radius: 10px;
+  border: 1px solid #327f8c;
+  background: linear-gradient(#286477,#123746);
+  color: #b9ffea !important;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Legibilidad */
+main .panel {
+  line-height: 1.55;
+}
+
+main .panel p,
+main .panel li {
+  font-size: clamp(14px, 1.4vw, 16px);
+}
+
+main select {
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 15px;
+  border-radius: 9px;
+}
+
+main footer {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Pantallas pequeñas */
+@media(max-width:600px) {
+  main button {
+    min-height: 44px;
+  }
+
+  main .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  main .nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  main button {
+    transition: none !important;
+  }
+}
